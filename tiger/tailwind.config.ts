@@ -32,16 +32,16 @@ export const TAILWIND_FONTS = {
 };
 
 const config: Config = {
-  content: [""],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primaryBg: "#D2CDCD",
+        primaryBg: "#E4EEF3",
         secondaryBg: "#BBC5ED",
-        tertiaryBg: "#D09B2C",
-        primaryText: "#020202",
-        secondaryText: "#E4E4E4",
-        accentPrimary: "#D09B2C",
+        tertiaryBg: "#AAA1FF",
+        primaryText: "#001542",
+        secondaryText: "#523065",
+        accentPrimary: "#686DFF",
       },
       fontSize: { ...TAILWIND_FONTS },
       // fontFamily: {
