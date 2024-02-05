@@ -1,43 +1,30 @@
-"use client"
-//TODO cust this - use reacthookform for functionality
+const Input = ({
+  type = "text",
+  placeholder,
+  value,
+  onChange,
+  error,
+  className,
+  ...rest
+}: {
+  type?: string;
+  placeholder: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error: string;
+  className: string;
+}) => {
+  return (
+    <div className={className}>
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
+      {error && <div className="error">{error}</div>}
+    </div>
+  );
+};
 
-import React from 'react';
-import * as Form from '@radix-ui/react-form';
-import './styles.css';
-
-const FormDemo = () => (
-  <Form.Root className="FormRoot">
-    <Form.Field className="FormField" name="email">
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-        <Form.Label className="FormLabel">Email</Form.Label>
-        <Form.Message className="FormMessage" match="valueMissing">
-          Search CC
-        </Form.Message>
-        <Form.Message className="FormMessage" match="typeMismatch">
-          Please provide a valid email
-        </Form.Message>
-      </div>
-      <Form.Control asChild>
-        <input className="Input" type="email" required />
-      </Form.Control>
-    </Form.Field>
-    <Form.Field className="FormField" name="question">
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
-        <Form.Label className="FormLabel">Question</Form.Label>
-        <Form.Message className="FormMessage" match="valueMissing">
-          Please enter a question
-        </Form.Message>
-      </div>
-      <Form.Control asChild>
-        <textarea className="Textarea" required />
-      </Form.Control>
-    </Form.Field>
-    <Form.Submit asChild>
-      <button className="Button" style={{ marginTop: 10 }}>
-        Post question
-      </button>
-    </Form.Submit>
-  </Form.Root>
-);
-
-export default FormDemo;
+export default Input;
