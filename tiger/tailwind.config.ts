@@ -36,10 +36,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primaryBg: "#E4EEF3",
-        secondaryBg: "#BBC5ED",
-        tertiaryBg: "#AAA1FF",
-        primaryText: "#001542",
+        primaryBg: "#E7E7E7",
+        secondaryBg: "#FFC600",
+        tertiaryBg: "#E7E7E7",
+        primaryText: "#0E1F4C",
         secondaryText: "#523065",
         accentPrimary: "#686DFF",
       },

@@ -7,14 +7,14 @@ import Button from "./Button";
 import Input from "./Input";
 
 const UserRequestForm = () => (
-  <Form.Root className="flex flex-col gap-4 w-full">
-    <div className="flex flex-row">
+  <Form.Root className="fixed bottom-0 left-10 w-3/4 p-4 mx-auto">
+    <div className="flex flex-row items-center justify-between">
       <Input
-        placeholder="Enter your question"
+        placeholder="Talk To TigerMouth..."
         value=""
         onChange={() => {}}
         error=""
-        className="flex flex-col w-full"
+        className="flex flex-col w-3/4 mx-auto mr-2 text-center"
       />
       <Form.Submit asChild>
         <Button type="primary">Submit</Button>
