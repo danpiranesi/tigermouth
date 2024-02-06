@@ -1,20 +1,20 @@
+import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-export default async function handler(req: any, res: any) {
+export async function POST(req: NextRequest, res: any) {
   if (req.method === "POST") {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
 
     try {
-      const response = await openai.chat.completions.create({
-        model: "gpt-4", // Specify the GPT-4 model
-        messages: [{ role: "user", content: req.body.prompt }],
-        temperature: 0.7, // Adjust based on your needs
-        stream: false,
-      });
+      const data = await req.json();
+      const threadId = data.threadId;
+      const runId = data.runId;
 
-      res.status(200).json(response.choices[0].message.content);
+      const runStatus = await openai.beta.threads.runs.retrieve(threadId, runId);
+
+        return NextResponse.json({ runStatus: runStatus.status });
     } catch (error) {
       console.error("Error querying OpenAI:", error);
       res.status(500).json({ message: "Error querying" });
