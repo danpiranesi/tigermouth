@@ -8,18 +8,15 @@ export interface Chat {
 }
 
 const TextDisplay = ({ message }: { message: Chat }) => {
-  const assistantMessageClass = "bg-secondaryBg";
-  const userMessageClass = "bg-tertiaryBg";
-  return (
-    <div
-      className={`w-full min-h-24 rounded-m ${
-        message.role === "assistant" ? assistantMessageClass : userMessageClass
-      }`}
-    >
-      <Text>{message.requestStatus}</Text>
-      <Text>{message.content}</Text>
-    </div>
-  );
+  //const assistantMessageClass = "bg-secondaryBg";
+  //const userMessageClass = "bg-tertiaryBg";
+  const sender = message.role === "assistant" ? "TigerMouth" : "User";
+  return (    <div className="message h-auto rounded-m">
+  <h3 className="font-bold">{sender}</h3>
+  <Text>{message.requestStatus}</Text>
+  <Text>{message.content}</Text>
+</div>
+);
 };
 
 export default TextDisplay;

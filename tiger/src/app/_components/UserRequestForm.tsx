@@ -22,6 +22,7 @@ const UserRequestForm = ({
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors: errors, isValid: isValid },
   } = useForm();
@@ -32,20 +33,22 @@ const UserRequestForm = ({
     threadId
       ? sendChatMessage({ input: data.userChatInput, threadId })
       : initializeThread(data.userChatInput);
+
+      reset({ userChatInput: "" });
   };
 
   return (
     <Form.Root
-      className="flex flex-col gap-4 bottom-2 absolute z-10 bg-secondaryBg p-4 rounded-md shadow-md w-full max-w-7xl"
+      className="p-4 rounded-md bg-primaryBg shadow-md w-3/4 fixed bottom-4"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex flex-row items-center">
+      <div className="flex items-center">
         <Input
-          placeholder="Enter your question"
+          placeholder="Talk to TigerMouth"
           register={register}
           inputId="userChatInput"
           error={errors.userChatInput?.message}
-          className="flex flex-col w-full text-lg p-2"
+          className="flex flex-col w-full text-md p-2"
         />
         <Form.Submit asChild>
           <Button type="primary">Submit</Button>

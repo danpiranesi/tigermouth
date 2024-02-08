@@ -37,11 +37,11 @@ const config: Config = {
     extend: {
       colors: {
         primaryBg: "#E4EEF3",
-        secondaryBg: "#BBC5ED",
-        tertiaryBg: "#AAA1FF",
+        secondaryBg: "#FFC600",
+        tertiaryBg: "#C08B3F",
         primaryText: "#001542",
         secondaryText: "#523065",
-        accentPrimary: "#686DFF",
+        accentPrimary: "#0E1F4C",
       },
       fontSize: { ...TAILWIND_FONTS },
       // fontFamily: {

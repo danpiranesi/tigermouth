@@ -6,6 +6,7 @@ import useSendMessage from "./hooks/useSendMessage";
 import useFetchAssistantResponse from "./hooks/useFetchAssistantResponse";
 import { useEffect, useState } from "react";
 import useThread from "./hooks/useInitializeAssistant";
+import Header from "./_components/Header";
 
 export default function Home() {
   const { chat, updateChat } = useUpdateChat();
@@ -45,7 +46,8 @@ export default function Home() {
   }, [chat]);
 
   return (
-    <main className="flex h-screen flex-col items-center max-w-7xl m-auto">
+    <main className="flex flex-col items-center max-w-7xl max-h-screen">
+      <Header></Header>
       <TextDisplayList
         messages={chat}
         requestStatus={statusMessage}
