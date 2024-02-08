@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Popup = ({ onNext }) => {
+const Popup = ({ onNext,  } : {onNext: () => void}) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
