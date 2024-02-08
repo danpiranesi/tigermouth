@@ -40,10 +40,12 @@ const TextDisplayList = ({
   }
 
   return (
-    <div className="flex flex-col w-3/4 h-screen justify-end pb-28">
+    <div className="flex flex-col w-3/4 h-full justify-end">
+      <div className="overflow-y-scroll">
       {chatMessages.map((message: any, i: any) => (
         <TextDisplay message={message} key={i} />
       ))}
+      </div>
     </div>
   );
 };

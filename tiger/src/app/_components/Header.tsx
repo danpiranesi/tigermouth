@@ -3,7 +3,7 @@ import Logo from "./Logo";
 const Header = () => {
   return (
     <header>
-      <div className="bg-primaryBg logo mb-[-5] z-10">
+      <div className="bg-white flex logo fixed w-full p-2">
         <Logo />
       </div>
     </header>
