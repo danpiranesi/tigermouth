@@ -44,7 +44,7 @@ const TextDisplayList = ({
   }, [chatMessages]);
 
   return (
-    <div className="flex w-3/4 flex-col justify-end items-center h-screen pb-16 pt-16 bg-primaryBg">
+    <div className="flex w-full flex-col justify-end items-center h-screen pb-16 pt-16 bg-primaryBg">
      
       <div ref={containerRef} className="overflow-y-auto flex flex-col w-full p-3">
         {chatMessages.map((message: any, i: any) => (
