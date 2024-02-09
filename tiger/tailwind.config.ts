@@ -36,12 +36,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primaryBg: "#E4EEF3",
-        secondaryBg: "#FFC600",
-        tertiaryBg: "#C08B3F",
-        primaryText: "#001542",
-        secondaryText: "#C1C1C1",
-        accentPrimary: "#0E1F4C",
+        // primaryBg: "#E4EEF3",
+        // secondaryBg: "#FFC600",
+        // tertiaryBg: "#C08B3F",
+        // primaryText: "#001542",
+        // secondaryText: "#C1C1C1",
+        // accentPrimary: "#0E1F4C",
+
+        primaryBg: "#212F43",
+        secondaryBg: "#92AF46",
+        tertiaryBg: "#92AF46",
+        primaryText: "#E7E7E7",
+        secondaryText: "#E7E7E7",
+        accentPrimary: "#FFB720",
       },
       fontSize: { ...TAILWIND_FONTS },
       // fontFamily: {
