@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   const { initializeThread, threadId, threadStatus } = useThread(updateRunId);
-  const { sendChatMessage, status } = useSendMessage(
+  const { sendChatMessage, status: sendStatus } = useSendMessage(
     threadId,
     updateRunId,
     updateStatusMessage
@@ -51,13 +51,15 @@ export default function Home() {
         messages={chat}
         requestStatus={statusMessage}
         isFirstMessage={chat.length === 0}
-        isSending={status === "pending"}
+        isSending={sendStatus === "pending"}
       />
       <UserRequestForm
         sendChatMessage={sendChatMessage}
         initializeThread={initializeThread}
         updateChat={updateChat}
         threadId={threadId}
+        isSendDisabled={sendStatus === "pending"}
+        isInputDisabled={sendStatus === "pending"}
       />
     </main>
   );

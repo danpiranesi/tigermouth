@@ -46,7 +46,6 @@ const UserRequestForm = ({
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors: errors, isValid: isValid },
   } = useForm({
     resolver: zodResolver(inputValidationSchema),
