@@ -46,7 +46,7 @@ const TextDisplayList = ({
   return (
     <div className="flex w-3/4 flex-col justify-end items-center h-screen pb-16 pt-16 bg-primaryBg">
      
-      <div ref={containerRef} className=" overflow-y-auto">
+      <div ref={containerRef} className="overflow-y-auto flex flex-col w-full p-3">
         {chatMessages.map((message: any, i: any) => (
           <TextDisplay message={message} key={i} />
         ))}

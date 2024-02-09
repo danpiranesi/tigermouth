@@ -11,12 +11,13 @@ const TextDisplay = ({ message }: { message: Chat }) => {
   //const assistantMessageClass = "bg-secondaryBg";
   //const userMessageClass = "bg-tertiaryBg";
   const sender = message.role === "assistant" ? "TigerMouth" : "User";
-  return (    <div className="message h-auto rounded-m">
-  <h3 className="font-bold">{sender}</h3>
-  <h3>{message.requestStatus}</h3>
-  <h3>{message.content}</h3>
-</div>
-);
+  return (
+    <div className="h-auto rounded-m flex flex-col w-full">
+      <h3 className="font-bold">{sender}</h3>
+      <h3>{message.requestStatus}</h3>
+      <h3>{message.content}</h3>
+    </div>
+  );
 };
 
 export default TextDisplay;

@@ -16,7 +16,7 @@ const useFetchAssistantResponse = (
       updateStatusMessage("fetching response...");
       let status: string;
       let retries = 0;
-      let maxRetries = 10;
+      let maxRetries = 20;
       const statusRes: statusRes = await checkRunStatus(threadId, runId);
       status = statusRes.runStatus;
       console.error("threadId", threadId, "runId", runId, "status", status);
