@@ -46,7 +46,7 @@ export default function Home() {
   }, [chat]);
 
   return (
-    <main className="flex flex-col items-center max-w-7xl">
+    <main className="flex flex-col items-center max-w-7xl m-auto">
       
       <TextDisplayList
         messages={chat}

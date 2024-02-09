@@ -7,6 +7,8 @@ import Button from "./Button";
 import Input from "./Input";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AddMessageRequest } from "../client/api";
+import { ArrowUpIcon } from "@radix-ui/react-icons";
+
 
 const UserRequestForm = ({
   sendChatMessage,
@@ -42,16 +44,19 @@ const UserRequestForm = ({
       className="p-3 rounded-md w-3/4 fixed bottom-1"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <Input
           placeholder="Talk to TigerMouth"
           register={register}
           inputId="userChatInput"
           error={errors.userChatInput?.message}
-          className="flex flex-col w-full text-md p-2 -mr-9"
+          className="p-2 rounded-lg" 
+          containerClassName="flex flex-col w-full text-md shadow-md rounded-lg overflow-hidden"
         />
         <Form.Submit asChild>
-          <Button type="primary">↑</Button>
+          <Button type="primary" className="h-full shadow-md" >
+            <ArrowUpIcon className="w-6 h-6" />
+          </Button>
         </Form.Submit>
       </div>
     </Form.Root>

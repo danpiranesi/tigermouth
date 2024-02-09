@@ -6,6 +6,7 @@ const Input = ({
 
   error,
   className,
+  containerClassName,
   register,
   inputId,
   isRequired = true,
@@ -14,17 +15,19 @@ const Input = ({
   type?: string;
   placeholder: string;
   error: any;
-  className: string;
+  className?: string;
+  containerClassName?: string;
   register: UseFormRegister<FieldValues>;
   inputId: string;
   isRequired?: boolean;
   disabled?: boolean;
 }) => {
   return (
-    <div className={className}>
+    <div className={containerClassName}>
       <input
         type={type}
         placeholder={placeholder}
+        className={className}
         disabled={disabled}
         {...register(inputId, { required: isRequired })}
       />

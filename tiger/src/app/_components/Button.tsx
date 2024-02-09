@@ -15,7 +15,7 @@ export default function Button({
     tertiary: "",
   };
 
-  const defaultClass = "p-2 rounded-md flex items-center align-middle";
+  const defaultClass = "p-2 rounded-lg flex items-center align-middle";
   return (
     <button
       className={`${defaultClass} ${buttonVariants[type]} ${
