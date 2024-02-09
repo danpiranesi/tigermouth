@@ -6,7 +6,7 @@ import * as Form from "@radix-ui/react-form";
 import Button from "./Button";
 import Input from "./Input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { AddMessageRequest } from "../client/api";
+import { AddMessageRequest, createAssistant } from "../client/api";
 import { ArrowUpIcon } from "@radix-ui/react-icons";
 
 
@@ -25,16 +25,17 @@ const UserRequestForm = ({
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors: errors, isValid: isValid },
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    updateChat("user", data.userChatInput);
+    // updateChat("user", data.userChatInput);
 
-    threadId
-      ? sendChatMessage({ input: data.userChatInput, threadId })
-      : initializeThread(data.userChatInput);
+    // threadId
+    //   ? sendChatMessage({ input: data.userChatInput, threadId })
+    //   : initializeThread(data.userChatInput);
+
+    createAssistant("tigerV1", "gpt-4", "tiger")
 
       reset({ userChatInput: "" });
   };
