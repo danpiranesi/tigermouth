@@ -29,13 +29,13 @@ const UserRequestForm = ({
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    // updateChat("user", data.userChatInput);
+    updateChat("user", data.userChatInput);
 
-    // threadId
-    //   ? sendChatMessage({ input: data.userChatInput, threadId })
-    //   : initializeThread(data.userChatInput);
+    threadId
+      ? sendChatMessage({ input: data.userChatInput, threadId })
+      : initializeThread(data.userChatInput);
 
-    createAssistant("tigerV1", "gpt-4", "tiger")
+    // createAssistant("tigerV1", "gpt-4", "tiger")
 
       reset({ userChatInput: "" });
   };
