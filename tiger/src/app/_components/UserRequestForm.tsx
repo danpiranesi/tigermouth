@@ -39,7 +39,7 @@ const UserRequestForm = ({
 
   return (
     <Form.Root
-      className="p-4 rounded-md bg-primaryBg shadow-md w-3/4 fixed bottom-4"
+      className="p-3 rounded-md w-3/4 fixed bottom-1"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex items-center">
@@ -48,10 +48,10 @@ const UserRequestForm = ({
           register={register}
           inputId="userChatInput"
           error={errors.userChatInput?.message}
-          className="flex flex-col w-full text-md p-2"
+          className="flex flex-col w-full text-md p-2 -mr-9"
         />
         <Form.Submit asChild>
-          <Button type="primary">Submit</Button>
+          <Button type="primary">↑</Button>
         </Form.Submit>
       </div>
     </Form.Root>

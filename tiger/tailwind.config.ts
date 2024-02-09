@@ -40,7 +40,7 @@ const config: Config = {
         secondaryBg: "#FFC600",
         tertiaryBg: "#C08B3F",
         primaryText: "#001542",
-        secondaryText: "#523065",
+        secondaryText: "#C1C1C1",
         accentPrimary: "#0E1F4C",
       },
       fontSize: { ...TAILWIND_FONTS },

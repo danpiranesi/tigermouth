@@ -10,7 +10,7 @@ export default function Button({
   className?: string;
 }) {
   const buttonVariants = {
-    primary: "bg-accentPrimary text-primaryBg hover:bg-secondaryBg",
+    primary: "bg-accentPrimary h-6 text-primaryBg hover:bg-secondaryBg",
     secondary: "border-textPrimary border",
     tertiary: "",
   };

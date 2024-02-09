@@ -13,8 +13,8 @@ const TextDisplay = ({ message }: { message: Chat }) => {
   const sender = message.role === "assistant" ? "TigerMouth" : "User";
   return (    <div className="message h-auto rounded-m">
   <h3 className="font-bold">{sender}</h3>
-  <Text>{message.requestStatus}</Text>
-  <Text>{message.content}</Text>
+  <h3>{message.requestStatus}</h3>
+  <h3>{message.content}</h3>
 </div>
 );
 };

@@ -7,7 +7,6 @@ import useFetchAssistantResponse from "./hooks/useFetchAssistantResponse";
 import { useEffect, useState } from "react";
 import useThread from "./hooks/useInitializeAssistant";
 import Header from "./_components/Header";
-import Popup from "./_components/Popup";
 
 export default function Home() {
   const { chat, updateChat } = useUpdateChat();
@@ -46,22 +45,8 @@ export default function Home() {
     }
   }, [chat]);
 
-  const [showNextPopup, setShowNextPopup] = useState(false);
-
-  const handleNextPopup = () => {
-    setShowNextPopup(true);
-  };
-
   return (
-    <main className="flex flex-col items-center max-w-7xl max-h-screen">
-    <div className="min-h-screen flex items-center justify-center bg-gray-200">
-      <h1 className="text-4xl font-bold"></h1>
-      {showNextPopup ? (
-        <Popup onNext={() => setShowNextPopup(false)} />
-      ) : (
-        <Popup onNext={handleNextPopup} />
-      )}
-    </div>
+    <main className="flex flex-col items-center max-w-7xl">
       
       <TextDisplayList
         messages={chat}
