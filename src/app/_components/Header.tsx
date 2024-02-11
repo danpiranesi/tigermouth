@@ -4,11 +4,15 @@ import Dropdown from "./Dropdown";
 const Header = () => {
   return (
     <header>
-      <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border-b border-r-primaryText flex items-center justify-between fixed w-full p-1 animate-gradient">
+      <div
+        //className="border-b border-r-primaryText flex items-center justify-between fixed w-full p-1 animate-bg bg-gradient-to-r from-primaryBg via-tertiaryBg to-accentPrimary"
+        className="border-b border-r-primaryText flex items-center justify-between fixed w-full p-1"
+      >
         <div className="ml-1">
           <Logo />
         </div>
-        <div className="mr-5">
+        <div className="Ct text-center font-bold text-2xl"><h1>TigerMouth</h1></div>
+        <div className="mr-5 pt-2">
           <Dropdown />
         </div>
       </div>
