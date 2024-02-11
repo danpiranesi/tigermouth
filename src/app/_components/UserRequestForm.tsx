@@ -72,11 +72,11 @@ const UserRequestForm = ({
           register={register}
           inputId="userChatInput"
           error={errors.userChatInput?.message}
-          className="p-2 rounded-lg bg-primaryBg border border-secondaryText"
+          className="p-2 rounded-lg bg-primaryBg border border-primaryText"
           containerClassName="flex flex-col w-full text-md shadow-md rounded-lg overflow-hidden bg-primaryBg"
         />
         <Form.Submit asChild>
-          <Button disabled={!isValid} type="primary" className="h-full shadow-md">
+          <Button disabled={!isValid} type="primary" className="h-full shadow-md border border-primaryText">
             <ArrowUpIcon className="w-6 h-6" />
           </Button>
         </Form.Submit>

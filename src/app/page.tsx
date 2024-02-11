@@ -6,6 +6,7 @@ import useSendMessage from "./hooks/useSendMessage";
 import useFetchAssistantResponse from "./hooks/useFetchAssistantResponse";
 import { useEffect, useState } from "react";
 import useThread from "./hooks/useInitializeAssistant";
+import Popup from "./_components/Popup";
 import Header from "./_components/Header";
 
 export default function Home() {
@@ -47,6 +48,9 @@ export default function Home() {
 
   return (
     <main className="flex flex-col sm:w-3/4 w-full items-center max-w-7xl m-auto">
+
+      <Popup />
+
       <TextDisplayList
         messages={chat}
         requestStatus={statusMessage}
