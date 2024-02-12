@@ -9,10 +9,12 @@ export async function POST(req: any, res: any) {
 
     try {
       const assistant = await openai.beta.assistants.create({
-        model: "gpt-4", // Specify the GPT-4 model
+        model: "gpt-4",
         instructions:
           "You are an assistant called TigerMouth, designed to help students at Colorado College quickly get answers to any questions regarding their education that they may have. Collect all information from www.coloradocollege.edu",
         name: "TigerMouthV2",
+        //tools: [{"type": "code_interpreter"}],
+        //file_ids: [file.id]
       });
 
       const assistantId = assistant.id;

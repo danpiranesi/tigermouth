@@ -27,6 +27,9 @@ const DropdownMenuDemo = () => {
           <DropdownMenu.Item className="DropdownMenuItem  text-secondaryText">
             About TigerMouth
           </DropdownMenu.Item>
+          <DropdownMenu.Item className="DropdownMenuItem  text-secondaryText">
+            Privacy Policy
+          </DropdownMenu.Item>
 
           <DropdownMenu.Arrow className="DropdownMenuArrow fill-primaryText" />
         </DropdownMenu.Content>

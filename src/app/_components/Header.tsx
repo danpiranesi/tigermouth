@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <div
         //className="border-b border-r-primaryText flex items-center justify-between fixed w-full p-1 animate-bg bg-gradient-to-r from-primaryBg via-tertiaryBg to-accentPrimary"
-        className="border-b border-r-primaryText flex items-center justify-between fixed w-full p-1"
+        className="border-b border-r-primaryText bg-primaryBg flex items-center justify-between fixed w-full p-1"
       >
         <div className="ml-1">
           <Logo />

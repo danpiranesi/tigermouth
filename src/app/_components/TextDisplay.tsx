@@ -12,7 +12,7 @@ const TextDisplay = ({ message }: { message: Chat }) => {
   //const userMessageClass = "bg-tertiaryBg";
   const sender = message.role === "assistant" ? "TigerMouth" : "User";
   return (
-    <div className="h-auto rounded-m flex flex-col w-full">
+    <div className="h-auto rounded-m flex flex-col w-full pb-1">
       <h3 className="font-bold">{sender}</h3>
       <h3>{message.requestStatus}</h3>
       <h3>{message.content}</h3>
