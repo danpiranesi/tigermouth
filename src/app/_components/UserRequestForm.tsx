@@ -59,6 +59,8 @@ const UserRequestForm = ({
       : initializeThread(data.userChatInput);
 
     reset({ userChatInput: "" });
+    
+    // createAssistant("", "", "")
   };
 
   return (

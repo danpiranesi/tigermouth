@@ -5,6 +5,7 @@ const Popup = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
+    console.log("hello")
     setIsVisible(false);
   };
 
