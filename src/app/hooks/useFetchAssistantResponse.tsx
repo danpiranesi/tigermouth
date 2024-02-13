@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { listMessages, checkRunStatus } from "../client/api";
+import { useEffect } from "react";
 
 interface statusRes {
   runStatus: string;
@@ -19,7 +20,6 @@ const useFetchAssistantResponse = (
       let maxRetries = 30;
       const statusRes: statusRes = await checkRunStatus(threadId, runId);
       status = statusRes.runStatus;
-      console.error("threadId", threadId, "runId", runId, "status", status);
       while (status !== "completed" && retries < maxRetries) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         const { runStatus } = await checkRunStatus(threadId, runId);
@@ -31,6 +31,7 @@ const useFetchAssistantResponse = (
         const response = await listMessages(threadId);
         updateStatusMessage("Successfully fetched response!");
         updateChat("assistant", response.messages);
+        return response.messages;
       } else if (
         status === "cancelled" ||
         status === "cancelling" ||
@@ -54,6 +55,7 @@ const useFetchAssistantResponse = (
     queryFn: async () => AssistantResponseHandler(),
     enabled: false,
   });
+
 
   return {
     messages,
