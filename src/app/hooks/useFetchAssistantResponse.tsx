@@ -26,7 +26,7 @@ const useFetchAssistantResponse = (
         status = runStatus;
         retries++;
       }
-      console.error("status::::", status);
+
       if (status === "completed") {
         const response = await listMessages(threadId);
         updateStatusMessage("Successfully fetched response!");
