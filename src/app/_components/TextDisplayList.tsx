@@ -1,18 +1,17 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import TextDisplay, { Chat } from "./TextDisplay";
+import Text from './Text';
 
 const TextDisplayList = ({
   messages,
-  requestStatus,
-  isFirstMessage,
+  isRequestError,
   isSending,
 }: {
   messages: Chat[];
-  requestStatus: any;
-  isFirstMessage: boolean;
+  isRequestError: any;
   isSending: boolean;
 }) => {
-  const chatMessages = [...messages];
+  const chatMessages = useMemo(() => messages, [messages]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -20,24 +19,6 @@ const TextDisplayList = ({
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     }
   };
-
-  const loadingIdx = messages.findIndex(
-    (message: Chat) => message.role === "assistant" && message.isLoading
-  );
-
-  if (isSending) {
-    if (loadingIdx !== -1) {
-      chatMessages[loadingIdx].requestStatus = requestStatus;
-    } else {
-      chatMessages.push({
-        role: "assistant",
-        isLoading: true,
-        requestStatus,
-      });
-    }
-  } else if (loadingIdx !== -1) {
-    chatMessages.splice(loadingIdx, 1);
-  }
 
   useEffect(() => {
     scrollToBottom();
@@ -50,6 +31,21 @@ const TextDisplayList = ({
         {chatMessages.map((message: any, i: any) => (
           <TextDisplay message={message} key={i} />
         ))}
+        {isSending && (
+          <div className="flex items-center">
+            <Text size="text-labelS" className="animate-pulse font-bold">
+              Prrring...
+            </Text>
+          </div>
+        )}
+        {isRequestError && (
+          <div className="flex items-center">
+            <Text size="text-labelS" className="font-bold text-red-500">
+              Error: Please try again
+            </Text>
+          </div>
+        )}
+
       </div>
     </div>
   );

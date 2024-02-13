@@ -17,7 +17,7 @@ export async function POST(req: any, res: any) {
 
     try {
       const assistant = await openai.beta.assistants.create({
-        model: "gpt-4",
+        model: "gpt-4-turbo-preview",
         instructions:
           "You are an assistant called TigerMouth, designed to help students at Colorado College quickly get answers to any questions regarding their education that they may have. Collect all information from www.coloradocollege.edu",
         name: "TigerMouthV2",

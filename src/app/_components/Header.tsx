@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import Dropdown from "./Dropdown";
+import Text from "./Text";
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
         <div className="ml-1">
           <Logo />
         </div>
-        <div className="Ct text-center font-bold text-2xl"><h1>TigerMouth</h1></div>
+        <div className="Ct text-center font-bold text-2xl"><Text size="text-headerXS" className=" font-inter">TigerMouth</Text></div>
         <div className="mr-5 pt-2">
           <Dropdown />
         </div>

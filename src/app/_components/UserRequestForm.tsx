@@ -60,7 +60,6 @@ const UserRequestForm = ({
 
     reset({ userChatInput: "" });
     
-    // createAssistant("", "", "")
   };
 
   return (
@@ -74,8 +73,8 @@ const UserRequestForm = ({
           register={register}
           inputId="userChatInput"
           error={errors.userChatInput?.message}
-          className="p-2 rounded-lg bg-primaryBg border border-primaryText"
-          containerClassName="flex flex-col w-full text-md shadow-md rounded-lg overflow-hidden bg-primaryBg"
+          className="p-2 rounded-lg bg-primaryBg  font-montrealMono"
+          containerClassName="flex flex-col w-full text-md shadow-md rounded-lg overflow-hidden bg-primaryBg border border-primaryText"
         />
         <Form.Submit asChild>
           <Button disabled={!isValid} type="primary" className="h-full shadow-md border border-primaryText">

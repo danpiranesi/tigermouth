@@ -1,4 +1,5 @@
 import { FieldValues, UseFormRegister } from "react-hook-form";
+import Text from "./Text";
 
 const Input = ({
   type = "text",
@@ -31,7 +32,7 @@ const Input = ({
         disabled={disabled}
         {...register(inputId, { required: isRequired })}
       />
-      {error && <div className="error">{error}</div>}
+      {/* {error && <Text className="">{error}</Text>} */}
     </div>
   );
 };

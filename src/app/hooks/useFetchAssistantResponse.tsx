@@ -16,7 +16,7 @@ const useFetchAssistantResponse = (
       updateStatusMessage("fetching response...");
       let status: string;
       let retries = 0;
-      let maxRetries = 20;
+      let maxRetries = 30;
       const statusRes: statusRes = await checkRunStatus(threadId, runId);
       status = statusRes.runStatus;
       console.error("threadId", threadId, "runId", runId, "status", status);
@@ -46,6 +46,7 @@ const useFetchAssistantResponse = (
   const {
     data: messages,
     isFetched: isAssistantResponseFetched,
+    isFetching: isAssistantResponseFetching,
     refetch: fetchAssistantResponse,
     isError: isAssistantResponseError,
   } = useQuery({
@@ -58,6 +59,7 @@ const useFetchAssistantResponse = (
     messages,
     fetchAssistantResponse,
     isAssistantResponseFetched,
+    isAssistantResponseFetching,
     isAssistantResponseError,
   };
 };

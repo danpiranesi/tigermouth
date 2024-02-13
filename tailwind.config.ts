@@ -60,6 +60,11 @@ const config: Config = {
         },
       }
     },
+    fontFamily: {
+      montrealMono: ["var(--montreal-mono)"],
+      montrealMonoBold: ["var(--montreal-mono-bold)"],
+      inter: ["var(--inter)"],
+    },
   },
   plugins: []
 };

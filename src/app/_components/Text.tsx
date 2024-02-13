@@ -29,7 +29,7 @@ export default function Text({
     size === "text-labelL" || size === "text-labelM" || size === "text-labelS";
   return (
     <span
-      className={`${className ? className : "text-primaryText"} ${size} ${
+      className={`${className ? className : "text-primaryText font-montrealMono"} ${size} ${
         isLabel ? "font-ibmPlexMono" : "font-abcRepro"
       }
       `}
